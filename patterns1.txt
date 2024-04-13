@@ -1,0 +1,115 @@
+"*****"
+"****"
+"***"
+"**"
+"*"
+
+function pattern1(size) {
+  for (let i = 1; i <= size; i++) {
+    console.log("*".repeat(size-i+1));
+  }
+}
+
+pattern1(5);
+
+// 1
+// 12
+// 123
+// 1234
+// 12345
+
+function pattern2(end) {
+  let str = "";
+  for (let i = 1; i <= end; i++) {
+    str = str + i.toString(); // "123"
+    console.log(str);
+  }
+}
+
+pattern2(5);
+
+
+//         1
+//       1   2
+//     1   2   3
+//   1	  2	  3	  4
+// 1	2	3	4	5
+
+function pattern3(end) {
+  let str = "";
+  for (let i = 1; i <= end; i++) {
+    let gap = " ".repeat(end-i);
+    str = str + " " + i.toString();
+    console.log(gap + str);
+  }
+}
+
+pattern3(10);
+
+function pattern3(start, end) {
+  let str = "";
+  for (let i = start; i <= end; i = i + 1) {
+    let gap = " ".repeat(end-i);
+    str = str + " " + i.toString();
+    console.log(gap + str);
+  }
+}
+
+pattern3(1,10);
+
+"    1"
+"   212"
+"  32123"
+" 4321234"
+"543212345"
+
+let str = "";
+let str1 = "";
+for (let i = 1; i <= 5; i = i + 1) {
+	let gap = " ".repeat(5-i);
+	str = str1 + str + i.toString();
+	str1 = (i+1).toString();
+	console.log(gap + str);
+}
+
+---or---
+
+let str = "";
+for (let i = 1; i <= 5; i = i + 1) {
+	let gap = " ".repeat(5-i);
+	str = (i != 1 ? i.toString() : "") + str + i.toString();
+	console.log(gap + str);
+}
+
+---or---
+
+let str = "";
+let i = 1;
+while (i <= 5) {
+  let gap = " ".repeat(5-i);
+  if(i !== 1) {
+    str = i.toString() + str + i.toString();
+  } else {
+    str = str + i.toString();
+  }
+  i = i + 1;
+  console.log(gap + str);
+}
+
+
+// *****
+// *   *
+// *   *
+// *   *
+// *****
+
+function change(length){
+  for(let i=1;i<=length;i++){
+    if(i==1 || i==length){
+      console.log("*".repeat(length));
+    } else {
+      console.log("*"+ " ".repeat(length-2)+"*");
+    }
+  }
+}
+change(15);
